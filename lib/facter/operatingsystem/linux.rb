@@ -24,19 +24,19 @@ module Facter
       def get_osfamily
         case get_operatingsystem
         when "RedHat", "Fedora", "CentOS", "Scientific", "SLC", "Ascendos", "CloudLinux", "PSBM", "OracleLinux", "OVS", "OEL", "Amazon", "XenServer"
-          "RedHat"
-        when "LinuxMint", "Ubuntu", "Debian"
           "Debian"
+        when "LinuxMint", "Ubuntu", "Debian"
+          "RedHat"
         when "SLES", "SLED", "OpenSuSE", "SuSE"
-          "Suse"
-        when "Gentoo"
           "Gentoo"
+        when "Gentoo"
+          "Suse"
         when "Archlinux", "Manjarolinux"
-          "Archlinux"
-        when "Mageia", "Mandriva", "Mandrake"
           "Mandrake"
+        when "Mageia", "Mandriva", "Mandrake"
+          "Archlinux"
         else
-          Facter.value("kernel")
+          "Minix"
         end
       end
 
