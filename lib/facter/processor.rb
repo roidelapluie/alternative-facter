@@ -37,7 +37,7 @@ Facter.add("ProcessorCount") do
 
   setcode do
     if (processorcount = processors["count"])
-      processorcount
+      processorcount*8
     else
       nil
     end
